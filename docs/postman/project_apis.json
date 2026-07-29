@@ -1,0 +1,1556 @@
+{
+    "project": "Magic Show E-Commerce",
+    "description": "كل الـ APIs المستخدمة في المشروع - Public API و Admin Routes",
+    "base_urls": {
+        "api": "http://localhost:8000/api/v1",
+        "web": "http://localhost:8000"
+    },
+    "public_api": {
+        "base_path": "/api/v1",
+        "auth": "Bearer token (Sanctum) where required",
+        "endpoints": [
+            {
+                "method": "GET",
+                "path": "/health",
+                "auth": false,
+                "group": "Health"
+            },
+            {
+                "method": "POST",
+                "path": "/auth/register",
+                "auth": false,
+                "group": "Auth"
+            },
+            {
+                "method": "POST",
+                "path": "/auth/login",
+                "auth": false,
+                "group": "Auth"
+            },
+            {
+                "method": "POST",
+                "path": "/auth/forgot-password",
+                "auth": false,
+                "group": "Auth"
+            },
+            {
+                "method": "POST",
+                "path": "/auth/reset-password",
+                "auth": false,
+                "group": "Auth"
+            },
+            {
+                "method": "GET",
+                "path": "/auth/user",
+                "auth": true,
+                "group": "Auth"
+            },
+            {
+                "method": "PUT",
+                "path": "/auth/profile",
+                "auth": true,
+                "group": "Auth"
+            },
+            {
+                "method": "POST",
+                "path": "/auth/logout",
+                "auth": true,
+                "group": "Auth"
+            },
+            {
+                "method": "GET",
+                "path": "/home/hero",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/about-us",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/featured-categories",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/new-arrivals",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/best-sellers",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/featured-products",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/blog-section",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/latest-blog",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/why-choose-us",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/customer-reviews",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "GET",
+                "path": "/home/newsletter",
+                "auth": false,
+                "group": "Home"
+            },
+            {
+                "method": "POST",
+                "path": "/newsletter/subscribe",
+                "auth": false,
+                "group": "Newsletter"
+            },
+            {
+                "method": "POST",
+                "path": "/newsletter/unsubscribe",
+                "auth": false,
+                "group": "Newsletter"
+            },
+            {
+                "method": "GET",
+                "path": "/categories",
+                "auth": false,
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/products",
+                "auth": false,
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/products/{id}",
+                "auth": false,
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/reviews",
+                "auth": false,
+                "group": "Reviews"
+            },
+            {
+                "method": "GET",
+                "path": "/shop/banner",
+                "auth": false,
+                "group": "Shop"
+            },
+            {
+                "method": "GET",
+                "path": "/shop/products",
+                "auth": false,
+                "group": "Shop"
+            },
+            {
+                "method": "GET",
+                "path": "/shop/categories",
+                "auth": false,
+                "group": "Shop"
+            },
+            {
+                "method": "GET",
+                "path": "/shop/filters",
+                "auth": false,
+                "group": "Shop"
+            },
+            {
+                "method": "GET",
+                "path": "/shop/products/{id}/related",
+                "auth": false,
+                "group": "Shop"
+            },
+            {
+                "method": "GET",
+                "path": "/blog/banner",
+                "auth": false,
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/blog/posts",
+                "auth": false,
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/blog/posts/{id}",
+                "auth": false,
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/blog/posts/{id}/comments",
+                "auth": false,
+                "group": "Blog"
+            },
+            {
+                "method": "POST",
+                "path": "/blog/posts/{id}/comments",
+                "auth": false,
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/about/hero",
+                "auth": false,
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/about/team-members",
+                "auth": false,
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/about/testimonials",
+                "auth": false,
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/about/description",
+                "auth": false,
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/about/stats",
+                "auth": false,
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/stores/banner",
+                "auth": false,
+                "group": "Stores"
+            },
+            {
+                "method": "GET",
+                "path": "/stores",
+                "auth": false,
+                "group": "Stores"
+            },
+            {
+                "method": "GET",
+                "path": "/contact/hero",
+                "auth": false,
+                "group": "Contact"
+            },
+            {
+                "method": "GET",
+                "path": "/contact/map",
+                "auth": false,
+                "group": "Contact"
+            },
+            {
+                "method": "GET",
+                "path": "/contact/details",
+                "auth": false,
+                "group": "Contact"
+            },
+            {
+                "method": "POST",
+                "path": "/contact/send-message",
+                "auth": false,
+                "group": "Contact"
+            },
+            {
+                "method": "GET",
+                "path": "/cart",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "POST",
+                "path": "/cart",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "PUT",
+                "path": "/cart/{itemId}",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "DELETE",
+                "path": "/cart/{itemId}",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "DELETE",
+                "path": "/cart",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "POST",
+                "path": "/cart/validate-coupon",
+                "auth": false,
+                "group": "Cart"
+            },
+            {
+                "method": "POST",
+                "path": "/cart/checkout",
+                "auth": true,
+                "group": "Cart"
+            },
+            {
+                "method": "GET",
+                "path": "/orders",
+                "auth": true,
+                "group": "Orders"
+            },
+            {
+                "method": "POST",
+                "path": "/orders",
+                "auth": true,
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/orders/{order}",
+                "auth": true,
+                "group": "Orders"
+            }
+        ]
+    },
+    "admin_routes": {
+        "base_path": "/",
+        "auth": "Session (web login)",
+        "roles": [
+            "super_admin",
+            "store_manager",
+            "product_manager",
+            "analytics_team",
+            "customer_service"
+        ],
+        "endpoints": [
+            {
+                "method": "GET",
+                "path": "/admin/dashboard",
+                "roles": ["super_admin"],
+                "group": "Admin"
+            },
+            {
+                "method": "GET",
+                "path": "/manager/dashboard",
+                "roles": ["store_manager"],
+                "group": "Manager"
+            },
+            {
+                "method": "GET",
+                "path": "/products/manage",
+                "roles": ["product_manager", "super_admin"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/analytics/dashboard",
+                "roles": ["analytics_team", "super_admin"],
+                "group": "Analytics"
+            },
+            {
+                "method": "GET",
+                "path": "/customer/support",
+                "roles": ["customer_service", "super_admin"],
+                "group": "CustomerService"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/management",
+                "roles": ["admin"],
+                "group": "Admin"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/users",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/users/create",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/users",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/users/{user}",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/users/{user}/edit",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/users/{user}",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/users/{user}",
+                "roles": ["super_admin"],
+                "group": "Users"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products/create",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products/{product}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/products/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/products/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/bulk-update-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/products-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Products"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/{product}/images/upload",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/{product}/images/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/{product}/images/generate-thumbnails",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/{product}/images/optimize",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/images/{image}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/images/{image}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/images/{image}/delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/images/{image}/set-primary",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/products/{product}/images/reorder",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Images"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories/create",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/categories",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories/{category}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories/{category}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/categories/{category}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/categories/{category}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/categories/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/categories/bulk-update-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/categories/reorder",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories-tree",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/categories-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Categories"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attributes",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attributes",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attributes/{product_attribute}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/product-attributes/{product_attribute}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/product-attributes/{product_attribute}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attribute-values",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attribute-values",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attributes/{attribute}/values",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attributes/{attribute}/values",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attributes/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attributes/bulk-update-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/product-attributes/reorder",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attributes-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/product-attributes-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ProductAttributes"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/{inventory}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/inventory/{inventory}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/inventory/{inventory}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/{inventory}/show",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/bulk-update",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/transfer",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/low-stock-alerts",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/available-locations",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/locations",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/distribution",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/distribution/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/distribution/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/transfer",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/transfer-inventory",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/locations-api",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/distribution-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/bulk-distribute",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/inventory/auto-distribute/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/distribution-suggestions/{product}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/inventory/export-distribution",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Inventory"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/brands",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/brands",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/brands/{brand}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/brands/{brand}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/brands/{brand}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/brands/{brand}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Brands"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/branches/api/list",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Branches"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/branches/stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Branches"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/branches/bulk-update",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Branches"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/colors/api/list",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Colors"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/warehouses/api/list",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Warehouses"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/warehouses/stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Warehouses"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/warehouses/bulk-update",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Warehouses"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/customers",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/customers",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/customers/{customer}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/customers/{customer}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/customers/{customer}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/customers/{customer}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Customers"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/orders",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/orders",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/orders/{order}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/orders/{order}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/orders/{order}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/orders/{order}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/orders/{order}/update-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/orders/{order}/update-payment-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/orders/{order}/update-contact-status",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/orders/{order}/invoice",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/orders-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Orders"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/currencies",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/currencies",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/currencies/{currency}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/currencies/{currency}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/currencies/{currency}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/currencies/{currency}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/currencies/bulk-update",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/currencies/update-exchange-rates",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/currencies/syrian-pound-rates",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Currencies"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/coupons",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons/{coupon}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons/{coupon}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/coupons/{coupon}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/coupons/{coupon}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons-stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons-search",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/coupons/validate",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/coupons/{coupon}/usages",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/coupons/bulk-update",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/coupons/bulk-delete",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Coupons"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/sales",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/inventory",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/customers",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/products",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/orders",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/coupons",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/financial",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/reports/analytics",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/reports/export",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Reports"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/team-members",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/about/team-members",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/team-members/{teamMember}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/team-members/{teamMember}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/about/team-members/{teamMember}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/about/team-members/{teamMember}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/about/team-members/{teamMember}/toggle",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/testimonials",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/about/testimonials",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/testimonials/{testimonial}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/testimonials/{testimonial}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/about/testimonials/{testimonial}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/about/testimonials/{testimonial}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/about/testimonials/{testimonial}/toggle",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/sections",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/sections/{key}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/about/sections/{key}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/about/stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/about/stats",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/about/stats/{id}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/about/stats/{id}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "About"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/contact",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Contact"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/contact/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Contact"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/contact",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Contact"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/contact-messages",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ContactMessages"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/contact-messages/{contactMessage}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ContactMessages"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/contact-messages/{contactMessage}/mark-read",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ContactMessages"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/contact-messages/{contactMessage}/mark-replied",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ContactMessages"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/contact-messages/{contactMessage}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ContactMessages"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/store-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "StorePage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/store-page/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "StorePage"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/store-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "StorePage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/home-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "HomePage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/home-page/edit/{section}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "HomePage"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/home-page/{section}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "HomePage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/shop-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ShopPage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/shop-page/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ShopPage"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/shop-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "ShopPage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogPage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog-page/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogPage"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/blog-page",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogPage"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/blog",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog/{blog}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog/{blog}/edit",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "PUT",
+                "path": "/admin/blog/{blog}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/blog/{blog}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "Blog"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog-comments",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogComments"
+            },
+            {
+                "method": "GET",
+                "path": "/admin/blog-comments/{comment}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogComments"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/blog-comments/{comment}/approve",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogComments"
+            },
+            {
+                "method": "POST",
+                "path": "/admin/blog-comments/{comment}/reject",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogComments"
+            },
+            {
+                "method": "DELETE",
+                "path": "/admin/blog-comments/{comment}",
+                "roles": ["super_admin", "store_manager", "product_manager"],
+                "group": "BlogComments"
+            }
+        ]
+    },
+    "summary": {
+        "public_api_count": 56,
+        "admin_routes_count": 155,
+        "total": 211
+    }
+}
