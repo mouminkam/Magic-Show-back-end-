@@ -158,9 +158,6 @@ php artisan test
 - [`docs/guides/AUTHENTICATION_SYSTEM.md`](docs/guides/AUTHENTICATION_SYSTEM.md) — the auth model, in depth
 - [`FIREBASE_SETUP.md`](FIREBASE_SETUP.md) — optional push notifications on new orders
 - [`docs/GITHUB_SETUP.md`](docs/GITHUB_SETUP.md) — creating the remote and pushing for the first time
-- [`docs/admin/BRD_MAGIC_SHOE_ADMIN_DASHBOARD.md`](docs/admin/BRD_MAGIC_SHOE_ADMIN_DASHBOARD.md) —
-  kept as a historical record of the original business requirements behind the (since-removed)
-  Blade admin panel and its React replacement
 
 Everything else that once lived under `docs/` — status reports, stage-by-stage build notes, an
 earlier "implementation complete" checkpoint — described a version of this project that no longer

@@ -20,48 +20,48 @@ class AdminUserSeeder extends Seeder
         $adminUsers = [
             [
                 'name' => 'Super Admin',
-                'email' => 'admin@magicshoe.com',
-                'password' => Hash::make('SuperAdmin@2024'),
+                'email' => 'admin@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_SUPER_ADMIN,
                 'email_verified_at' => now(),
                 'description' => 'System Super Administrator with full access'
             ],
             [
                 'name' => 'Store Manager',
-                'email' => 'manager@magicshoe.com',
-                'password' => Hash::make('StoreManager@2024'),
+                'email' => 'manager@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_STORE_MANAGER,
                 'email_verified_at' => now(),
                 'description' => 'Store Manager with inventory and order management access'
             ],
             [
                 'name' => 'Product Manager',
-                'email' => 'product@magicshoe.com',
-                'password' => Hash::make('ProductManager@2024'),
+                'email' => 'product@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_PRODUCT_MANAGER,
                 'email_verified_at' => now(),
                 'description' => 'Product Manager with catalog management access'
             ],
             [
                 'name' => 'Analytics Team Lead',
-                'email' => 'analytics@magicshoe.com',
-                'password' => Hash::make('Analytics@2024'),
+                'email' => 'analytics@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_ANALYTICS_TEAM,
                 'email_verified_at' => now(),
                 'description' => 'Analytics Team with reporting and insights access'
             ],
             [
                 'name' => 'Customer Service Lead',
-                'email' => 'support@magicshoe.com',
-                'password' => Hash::make('Support@2024'),
+                'email' => 'support@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_CUSTOMER_SERVICE,
                 'email_verified_at' => now(),
                 'description' => 'Customer Service with customer and order support access'
             ],
             [
                 'name' => 'Demo Admin',
-                'email' => 'demo@magicshoe.com',
-                'password' => Hash::make('Demo@2024'),
+                'email' => 'demo@magicshoe.test',
+                'password' => Hash::make(env('SEED_ADMIN_PASSWORD', 'password')),
                 'role' => User::ROLE_SUPER_ADMIN,
                 'email_verified_at' => now(),
                 'description' => 'Demo Admin account for testing purposes'
@@ -149,12 +149,12 @@ class AdminUserSeeder extends Seeder
         $this->command->table(
             ['Role', 'Email', 'Password'],
             [
-                ['Super Admin', 'admin@magicshoe.com', 'SuperAdmin@2024'],
-                ['Store Manager', 'manager@magicshoe.com', 'StoreManager@2024'],
-                ['Product Manager', 'product@magicshoe.com', 'ProductManager@2024'],
-                ['Analytics Team', 'analytics@magicshoe.com', 'Analytics@2024'],
-                ['Customer Service', 'support@magicshoe.com', 'Support@2024'],
-                ['Demo Admin', 'demo@magicshoe.com', 'Demo@2024'],
+                ['Super Admin', 'admin@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
+                ['Store Manager', 'manager@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
+                ['Product Manager', 'product@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
+                ['Analytics Team', 'analytics@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
+                ['Customer Service', 'support@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
+                ['Demo Admin', 'demo@magicshoe.test', 'SEED_ADMIN_PASSWORD (default: password)'],
             ]
         );
         
@@ -167,7 +167,7 @@ class AdminUserSeeder extends Seeder
      */
     public function createAdminUser(string $name, string $email, string $role, string $password = null): User
     {
-        $password = $password ?: 'DefaultPassword@2024';
+        $password = $password ?: env('SEED_ADMIN_PASSWORD', 'password');
         
         return User::updateOrCreate(
             ['email' => $email],

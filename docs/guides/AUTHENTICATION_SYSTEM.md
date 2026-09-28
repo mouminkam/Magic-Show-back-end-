@@ -29,11 +29,11 @@ The system supports the following user roles:
 ## Default Users
 The system comes with pre-configured users for each role:
 
-- **Super Admin**: `admin@magicshoe.com` / `password`
-- **Store Manager**: `manager@magicshoe.com` / `password`
-- **Product Manager**: `product@magicshoe.com` / `password`
-- **Analytics Team**: `analytics@magicshoe.com` / `password`
-- **Customer Service**: `support@magicshoe.com` / `password`
+- **Super Admin**: `admin@magicshoe.test` / `password`
+- **Store Manager**: `manager@magicshoe.test` / `password`
+- **Product Manager**: `product@magicshoe.test` / `password`
+- **Analytics Team**: `analytics@magicshoe.test` / `password`
+- **Customer Service**: `support@magicshoe.test` / `password`
 
 ## User Model Methods
 

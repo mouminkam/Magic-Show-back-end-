@@ -77,7 +77,7 @@ class Testimonial extends Model
      * - testimonials/original/foo.jpg
      * - /storage/testimonials/original/foo.jpg
      * - http://localhost:8000/storage/testimonials/original/foo.jpg?v=123
-     * - https://magicshow.pl-sites.com/storage/testimonials/original/foo.jpg
+     * - https://api.yourdomain.com/storage/testimonials/original/foo.jpg
      */
     protected function normalizeStoragePath(?string $value): ?string
     {
