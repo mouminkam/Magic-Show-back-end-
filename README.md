@@ -106,9 +106,10 @@ decrement and coupon redemption, and bounded cache keys on public search are all
 ### Upgrade, don't suppress
 
 Every `laravel/framework` 11.x release carries open advisories, and Composer refuses a flagged install by default.
-The fix was to move to `^12.61.1`, where every advisory known at the time was resolved, with no
-`config.audit.ignore` entry. CI now runs `composer audit` on every push, and that is how the advisories published since
-then surfaced (Laravel, Symfony, CommonMark, Flysystem) — see the trade-offs.
+The fix was to upgrade the framework rather than silence the warning, and there is still no `config.audit.ignore`
+entry. CI runs `composer audit` on every push: its first run caught advisories published in 2026 for
+`laravel/framework`, Symfony, CommonMark and Flysystem, and a `composer update` within the existing constraints
+(Laravel 12.73, Symfony 7.4.23) cleared every one of them — 68 tests, 134 assertions, all green.
 
 ## Honest trade-offs
 
@@ -116,9 +117,6 @@ then surfaced (Laravel, Symfony, CommonMark, Flysystem) — see the trade-offs.
   contained next step.
 - Firebase credentials are never committed. Without `FIREBASE_CREDENTIALS` or `FIREBASE_CREDENTIALS_JSON`, new-order
   push notifications are skipped silently — see [`FIREBASE_SETUP.md`](FIREBASE_SETUP.md).
-- **`composer audit` is failing**: the lock file predates advisories published in 2026 for `laravel/framework` (12.64 →
-  ≥ 12.71), Symfony components (7.4.13–14 → ≥ 7.4.23), `league/commonmark` and `league/flysystem`. A `composer update`
-  within the existing constraints resolves them; until then CI stays red on purpose.
 - `composer.json` still carries the skeleton's package name (`laravel/laravel`).
 
 <a href="https://github.com/mouminkam">
